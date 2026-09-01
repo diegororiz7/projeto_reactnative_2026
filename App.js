@@ -1,8 +1,8 @@
 import React from 'react';
-import PlaylistApp from './components/PlaylistApp';
+import SeriesApp from './components/SeriesApp';
 
 export default function App(){
   return(
-    <PlaylistApp />
+    <SeriesApp />
   );
 }
