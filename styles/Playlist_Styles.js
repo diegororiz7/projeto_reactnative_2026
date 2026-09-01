@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     height: 150,
     borderRadius: 10,
     marginBottom: 10,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
 
   musica: {
@@ -59,7 +59,11 @@ const styles = StyleSheet.create({
   },
 
   botao: {
-    marginTop: 5
+    marginTop: 5,
+    //width: '25%',
+    //resizeMode: 'contain',
+    //justifyContent: 'center',
+    //alignItems: 'center'
   }
 
 });

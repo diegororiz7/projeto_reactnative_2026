@@ -1,8 +1,8 @@
 import React from 'react';
-import NBAApp from './components/NBAApp';
+import PlaylistApp from './components/PlaylistApp';
 
 export default function App(){
   return(
-    <NBAApp />
+    <PlaylistApp />
   );
 }
