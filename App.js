@@ -1,8 +1,8 @@
 import React from 'react';
-import SeriesApp from './components/SeriesApp';
+import TemperaturaApp from './components/TemperaturaApp';
 
 export default function App(){
   return(
-    <SeriesApp />
+    <TemperaturaApp />
   );
 }
