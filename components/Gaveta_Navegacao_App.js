@@ -2,18 +2,19 @@ import React, {useState} from 'react';
 import {View, Button, Text, Pressable} from 'react-native';
 import styles from '../styles/Navegacao_Styles';
 import Temperatura from './TemperaturaApp';
+import Series from './SeriesApp';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import {Ionicons} from '@expo/vector-icons';
 
-const Pilha = createStackNavigator();
+const Gaveta = createDrawerNavigator();
 
 function TelaHome({navigation}){
     return(
         <View style = {styles.viewTN}>
             <Text style = {styles.textoTN}>FASM</Text>
             <Text style = {styles.textoTN}>Santa Marcelina</Text>
-
+        
             <View style = {styles.botaoContainer}>
                 <Pressable
                     style = {styles.botao}
@@ -75,11 +76,17 @@ function TelaTemperatura({navigation}){
     );
 }
 
-export default function NavegacaoApp(){
+function TelaSeries({navigation}){
+    return(
+        <Series />
+    );
+}
+
+export default function Gaveta_NavegacaoApp(){
     return(
         <NavigationContainer>
-            <Pilha.Navigator initialRouteName='Home'>
-                <Pilha.Screen
+            <Gaveta.Navigator initialRouteName='Home'>
+                <Gaveta.Screen
                     name = 'Home'
                     component = {TelaHome}
                     options = {({navigation}) => ({
@@ -89,21 +96,17 @@ export default function NavegacaoApp(){
                         },
                         tabBarLabel: 'Home',
                         headerTintColor: '#fff',
-                        headerRight: () => (
+                        drawerIcon: ({color, size}) => (
                             <Ionicons
-                                name = 'thermometer'
-                                size = {30}
-                                style = {{marginRight: 15}}
-                                color = '#fff'
-                                onPress = {
-                                    () => navigation.navigate('Temperatura')
-                                }
+                                name = 'home'
+                                color = {color}
+                                size = {size}
                             />
                         )
                     })}
                 />
 
-                <Pilha.Screen
+                <Gaveta.Screen
                     name = 'Curso'
                     component = {TelaCurso}
                     options = {({navigation}) => ({
@@ -113,21 +116,17 @@ export default function NavegacaoApp(){
                         },
                         tabBarLabel: 'Curso',
                         headerTintColor: '#fff',
-                        headerRight: () => (
+                        drawerIcon: ({color, size}) => (
                             <Ionicons
-                                name = 'easel-sharp'
-                                size = {30}
-                                style = {{marginRight: 15}}
-                                color = '#fff'
-                                onPress = {
-                                    () => navigation.navigate('Aluno')
-                                }
+                                name = 'book'
+                                color = {color}
+                                size = {size}
                             />
                         )
                     })}
                 />
 
-                <Pilha.Screen
+                <Gaveta.Screen
                     name = 'Aluno'
                     component = {TelaAluno}
                     options = {({navigation}) => ({
@@ -137,21 +136,17 @@ export default function NavegacaoApp(){
                         },
                         tabBarLabel: 'Aluno',
                         headerTintColor: '#fff',
-                        headerRight: () => (
+                        drawerIcon: ({color, size}) => (
                             <Ionicons
-                                name = 'home'
-                                size = {30}
-                                style = {{marginRight: 15}}
-                                color = '#fff'
-                                onPress = {
-                                    () => navigation.navigate('Home')
-                                }
+                                name = 'easel-sharp'
+                                color = {color}
+                                size = {size}
                             />
                         )
                     })}
                 />
 
-                <Pilha.Screen
+                <Gaveta.Screen
                     name = 'Temperatura'
                     component = {TelaTemperatura}
                     options = {({navigation}) => ({
@@ -161,20 +156,36 @@ export default function NavegacaoApp(){
                         },
                         tabBarLabel: 'Temperatura',
                         headerTintColor: '#fff',
-                        headerRight: () => (
+                        drawerIcon: ({color, size}) => (
                             <Ionicons
-                                name = 'home'
-                                size = {30}
-                                style = {{marginRight: 15}}
-                                color = '#fff'
-                                onPress = {
-                                    () => navigation.navigate('Home')
-                                }
+                                name = 'thermometer'
+                                color = {color}
+                                size = {size}
                             />
                         )
                     })}
                 />
-            </Pilha.Navigator>
+
+                <Gaveta.Screen
+                    name = 'Series'
+                    component = {TelaSeries}
+                    options = {({navigation}) => ({
+                        title: 'Tela Series',
+                        headerStyle: {
+                            backgroundColor: '#008'
+                        },
+                        tabBarLabel: 'Séries',
+                        headerTintColor: '#fff',
+                        drawerIcon: ({color, size}) => (
+                            <Ionicons
+                                name = 'card-outline'
+                                color = {color}
+                                size = {size}
+                            />
+                        )
+                    })}
+                />
+            </Gaveta.Navigator>
         </NavigationContainer>
     );
 }

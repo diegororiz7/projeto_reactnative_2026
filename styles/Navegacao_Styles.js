@@ -12,10 +12,6 @@ const styles = StyleSheet.create({
     color: '#1c1c1c',
   },
   botaoContainer:{
-    width: '70%',
-    marginVertical: 5,
-  },
-  botaoContainer:{
     flexDirection:'column',
     justifyContent:'center',
     marginVertical:20,

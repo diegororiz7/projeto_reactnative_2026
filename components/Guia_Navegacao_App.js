@@ -3,17 +3,17 @@ import {View, Button, Text, Pressable} from 'react-native';
 import styles from '../styles/Navegacao_Styles';
 import Temperatura from './TemperaturaApp';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Ionicons} from '@expo/vector-icons';
 
-const Pilha = createStackNavigator();
+const Guia = createBottomTabNavigator();
 
 function TelaHome({navigation}){
     return(
         <View style = {styles.viewTN}>
             <Text style = {styles.textoTN}>FASM</Text>
             <Text style = {styles.textoTN}>Santa Marcelina</Text>
-
+        
             <View style = {styles.botaoContainer}>
                 <Pressable
                     style = {styles.botao}
@@ -75,11 +75,11 @@ function TelaTemperatura({navigation}){
     );
 }
 
-export default function NavegacaoApp(){
+export default function Guia_NavegacaoApp(){
     return(
         <NavigationContainer>
-            <Pilha.Navigator initialRouteName='Home'>
-                <Pilha.Screen
+            <Guia.Navigator initialRouteName='Home'>
+                <Guia.Screen
                     name = 'Home'
                     component = {TelaHome}
                     options = {({navigation}) => ({
@@ -89,21 +89,17 @@ export default function NavegacaoApp(){
                         },
                         tabBarLabel: 'Home',
                         headerTintColor: '#fff',
-                        headerRight: () => (
+                        tabBarIcon: ({color, size}) => (
                             <Ionicons
-                                name = 'thermometer'
-                                size = {30}
-                                style = {{marginRight: 15}}
-                                color = '#fff'
-                                onPress = {
-                                    () => navigation.navigate('Temperatura')
-                                }
+                                name = 'home'
+                                color = {color}
+                                size = {size}
                             />
                         )
                     })}
                 />
 
-                <Pilha.Screen
+                <Guia.Screen
                     name = 'Curso'
                     component = {TelaCurso}
                     options = {({navigation}) => ({
@@ -113,21 +109,17 @@ export default function NavegacaoApp(){
                         },
                         tabBarLabel: 'Curso',
                         headerTintColor: '#fff',
-                        headerRight: () => (
+                        tabBarIcon: ({color, size}) => (
                             <Ionicons
-                                name = 'easel-sharp'
-                                size = {30}
-                                style = {{marginRight: 15}}
-                                color = '#fff'
-                                onPress = {
-                                    () => navigation.navigate('Aluno')
-                                }
+                                name = 'book'
+                                color = {color}
+                                size = {size}
                             />
                         )
                     })}
                 />
 
-                <Pilha.Screen
+                <Guia.Screen
                     name = 'Aluno'
                     component = {TelaAluno}
                     options = {({navigation}) => ({
@@ -137,21 +129,17 @@ export default function NavegacaoApp(){
                         },
                         tabBarLabel: 'Aluno',
                         headerTintColor: '#fff',
-                        headerRight: () => (
+                        tabBarIcon: ({color, size}) => (
                             <Ionicons
-                                name = 'home'
-                                size = {30}
-                                style = {{marginRight: 15}}
-                                color = '#fff'
-                                onPress = {
-                                    () => navigation.navigate('Home')
-                                }
+                                name = 'easel-sharp'
+                                color = {color}
+                                size = {size}
                             />
                         )
                     })}
                 />
 
-                <Pilha.Screen
+                <Guia.Screen
                     name = 'Temperatura'
                     component = {TelaTemperatura}
                     options = {({navigation}) => ({
@@ -161,20 +149,16 @@ export default function NavegacaoApp(){
                         },
                         tabBarLabel: 'Temperatura',
                         headerTintColor: '#fff',
-                        headerRight: () => (
+                        tabBarIcon: ({color, size}) => (
                             <Ionicons
-                                name = 'home'
-                                size = {30}
-                                style = {{marginRight: 15}}
-                                color = '#fff'
-                                onPress = {
-                                    () => navigation.navigate('Home')
-                                }
+                                name = 'thermometer'
+                                color = {color}
+                                size = {size}
                             />
                         )
                     })}
                 />
-            </Pilha.Navigator>
+            </Guia.Navigator>
         </NavigationContainer>
     );
 }

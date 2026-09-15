@@ -1,9 +1,8 @@
 import React from 'react';
-import TemperaturaApp from './components/NavegacaoApp';
-import NavegacaoApp from './components/NavegacaoApp';
+import Gaveta_NavegacaoApp from './components/Gaveta_Navegacao_App';
 
 export default function App(){
   return(
-    <NavegacaoApp />
+    <Gaveta_NavegacaoApp />
   );
 }
