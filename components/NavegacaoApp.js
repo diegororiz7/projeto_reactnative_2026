@@ -4,7 +4,7 @@ import styles from '../styles/Navegacao_Styles';
 import Temperatura from './TemperaturaApp';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-//import {Ionicons} from 'react-native-vector-icons';
+import {Ionicons} from '@expo/vector-icons';
 
 const Pilha = createStackNavigator();
 
@@ -89,7 +89,7 @@ export default function NavegacaoApp(){
                         },
                         tabBarLabel: 'Home',
                         headerTintColor: '#fff',
-                        /*headerRight: () => (
+                        headerRight: () => (
                             <Ionicons
                                 name = 'book'
                                 size = {30}
@@ -99,7 +99,7 @@ export default function NavegacaoApp(){
                                     () => navigation.navigate('Curso')
                                 }
                             />
-                        )*/
+                        )
                     })}
                 />
 
@@ -113,7 +113,7 @@ export default function NavegacaoApp(){
                         },
                         tabBarLabel: 'Curso',
                         headerTintColor: '#fff',
-                        /*headerRight: () => (
+                        headerRight: () => (
                             <Ionicons
                                 name = 'easel-sharp'
                                 size = {30}
@@ -123,7 +123,7 @@ export default function NavegacaoApp(){
                                     () => navigation.navigate('Aluno')
                                 }
                             />
-                        )*/
+                        )
                     })}
                 />
 
@@ -137,7 +137,7 @@ export default function NavegacaoApp(){
                         },
                         tabBarLabel: 'Aluno',
                         headerTintColor: '#fff',
-                        /*headerRight: () => (
+                        headerRight: () => (
                             <Ionicons
                                 name = 'home'
                                 size = {30}
@@ -147,7 +147,7 @@ export default function NavegacaoApp(){
                                     () => navigation.navigate('Home')
                                 }
                             />
-                        )*/
+                        )
                     })}
                 />
 
@@ -161,7 +161,7 @@ export default function NavegacaoApp(){
                         },
                         tabBarLabel: 'Temperatura',
                         headerTintColor: '#fff',
-                        /*headerRight: () => (
+                        headerRight: () => (
                             <Ionicons
                                 name = 'home'
                                 size = {30}
@@ -171,7 +171,7 @@ export default function NavegacaoApp(){
                                     () => navigation.navigate('Home')
                                 }
                             />
-                        )*/
+                        )
                     })}
                 />
             </Pilha.Navigator>
