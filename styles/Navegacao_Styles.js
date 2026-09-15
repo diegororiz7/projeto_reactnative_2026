@@ -14,7 +14,19 @@ const styles = StyleSheet.create({
   botaoContainer:{
     width: '70%',
     marginVertical: 5,
-  }
+  },
+  botaoContainer:{
+    flexDirection:'column',
+    justifyContent:'center',
+    marginVertical:20,
+    margin: 20
+  },
+  botao:{
+    backgroundColor:'#008',
+    padding:12,
+    borderRadius:8,
+    margin: 20
+  },
 });
 
 export default styles;
