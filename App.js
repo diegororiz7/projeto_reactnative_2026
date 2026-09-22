@@ -1,8 +1,8 @@
 import React from 'react';
-import Gaveta_NavegacaoApp from './components/Gaveta_Navegacao_App';
+import StatusBar_App from './components/StatusBar_App';
 
 export default function App(){
   return(
-    <Gaveta_NavegacaoApp />
+    <StatusBar_App />
   );
 }
