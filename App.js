@@ -1,8 +1,8 @@
 import React from 'react';
-import StatusBar_App from './components/StatusBar_App';
+import Fetch_Pokemon from './components/PokemonApp';
 
 export default function App(){
   return(
-    <StatusBar_App />
+    <Fetch_Pokemon />
   );
 }
