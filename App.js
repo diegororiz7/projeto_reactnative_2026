@@ -1,8 +1,8 @@
 import React from 'react';
-import Fetch_Pokemon from './components/PokemonApp';
+import Conversor_Moedas from './components/MoedasApp';
 
 export default function App(){
   return(
-    <Fetch_Pokemon />
+    <Conversor_Moedas />
   );
 }
