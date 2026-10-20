@@ -1,8 +1,8 @@
 import React from 'react';
-import Conversor_Moedas from './components/MoedasApp';
+import AsyncCompras from './components/Async_Compras';
 
 export default function App(){
   return(
-    <Conversor_Moedas />
+    <AsyncCompras />
   );
 }
