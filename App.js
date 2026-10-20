@@ -1,8 +1,8 @@
 import React from 'react';
-import AsyncCompras from './components/Async_Compras';
+import AsyncRestaurante from './components/Async_Restaurante';
 
 export default function App(){
   return(
-    <AsyncCompras />
+    <AsyncRestaurante />
   );
 }
